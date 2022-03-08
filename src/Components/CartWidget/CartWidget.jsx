@@ -1,8 +1,8 @@
 import React from "react";
-import "./CartWidget.css";
+import { FaShoppingCart } from "react-icons/fa";
 
 const CartWidget = () => {
-  return <img src="/Carrito.png" alt="icono" className="carroCompra" ></img>;
+  <FaShoppingCart />;
 };
 
 export default CartWidget;
