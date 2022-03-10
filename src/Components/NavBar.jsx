@@ -3,22 +3,29 @@ import CartWidget from "./CartWidget/CartWidget";
 
 const NavBar = () => {
   return (
-    <>
+    <div>
       <div className="text-white">
-        <nav className="navbar navbar-light bg-dark text-align-center">
-          <div className="container-fluid">
-            <span className="navbar-brand text-white mb-0 h1">Inicio</span>
-            <span className="navbar-brand text-white mb-0 h1">
-              Guitarras Electricas
-            </span>
-            <span className="navbar-brand text-white mb-0 h1">
-              Guitarrsa Acusticas
-            </span>
-            <CartWidget /> 
-          </div>
-        </nav>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href={}
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Guitarras
+              </a>
+            </li>
+          </ul>
+        </div>
+        >
+        <CartWidget />
+        <ul />
       </div>
-    </>
+    </div>
   );
 };
 
