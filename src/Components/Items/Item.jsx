@@ -1,28 +1,14 @@
-import React, { useState } from "react";
+import React from 'react'
 
-const ItemCounter = () => {
-  const [contador, setContador] = useState(1);
-  const sumar = () => {
-    setContador(contador + 1);
-  };
-  const restar = () => {
-    if (contador > 1) {
-      setContador(contador - 1);
-    }
-  };
-
+const Item = ({ marca, description, model, price, pictureURL }) => {
   return (
     <div className="container py-5">
       <div className="card" style={{ width: "15rem" }}>
-        <p className="card-title text-center card-header"> Gibson</p>
-        <img
-          src="../img/GibsonFlyingV.png"
-          className="card-img-top"
-          alt="guitarra"
-        />
+        <p className="card-title text-center card-header"> {marca}</p>
+        <img src={pictureURL} className="card-img-top" alt="guitarra" />
         <div className="card-body">
-          <p className="fw-light"> Modelo: Flying V</p>
-          <p className="fw-light"> Cuerpo: sólido</p>
+          <p className="fw-light"> {model} V</p>
+          <p className="fw-light"> {description}</p>
           <div className="d-flex justify-content-center ">
             <button className="btn btn-dark" onClick={restar}>
               -
@@ -35,7 +21,7 @@ const ItemCounter = () => {
           <hr />
           <div className="d-flex justify-content-center">
             <button type="button" className="btn btn-dark">
-              <strong>Comprar</strong>
+              <strong>{price}</strong>
             </button>
           </div>
         </div>
@@ -44,4 +30,5 @@ const ItemCounter = () => {
   );
 };
 
-export default ItemCounter;
+
+export default Item

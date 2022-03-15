@@ -10,7 +10,7 @@ const NavBar = () => {
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle text-white"
-                href="#"
+                href={URL}
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -24,21 +24,21 @@ const NavBar = () => {
               >
                 <li>
                   {" "}
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href={URL}>
                     {" "}
                     Electricas{" "}
                   </a>
                 </li>
                 <li>
                   {" "}
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href={URL}>
                     {" "}
                     Acusticas{" "}
                   </a>
                 </li>
                 <li>
                   {" "}
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href={URL}>
                     {" "}
                     Electroacusticas{" "}
                   </a>
@@ -49,7 +49,7 @@ const NavBar = () => {
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle text-white"
-                href="#"
+                href={URL}
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -62,17 +62,17 @@ const NavBar = () => {
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href={URL}>
                     Valvulares
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href={URL}>
                     Transistores{" "}
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href={URL}>
                     {" "}
                     Amp. Acusticos{" "}
                   </a>
@@ -83,7 +83,7 @@ const NavBar = () => {
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle text-white"
-                href="#"
+                href={URL}
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -97,21 +97,21 @@ const NavBar = () => {
               >
                 <li>
                   {" "}
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href={URL}>
                     {" "}
                     Pedales{" "}
                   </a>
                 </li>
                 <li>
                   {" "}
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href={URL}>
                     {" "}
                     Multiefectos{" "}
                   </a>
                 </li>
                 <li>
                   {" "}
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href={URL}>
                     {" "}
                     Racks{" "}
                   </a>

@@ -1,6 +1,6 @@
 import "./App.css";
 import ItemCounter from "./Components/ItemCounter";
-import ItemListContainer from "./Components/ItemListContainer";
+import ItemListContainer from "./Components/Items/ItemListContainer";
 import NavBar from "./Components/NavBar";
 
 function App() {
@@ -8,8 +8,8 @@ function App() {
 
   return (
     <div>
-      <ItemListContainer titulo={title} />
       <NavBar />
+      <ItemListContainer titulo={title} />
       <ItemCounter />
     </div>
   );
