@@ -1,5 +1,5 @@
 import React from "react";
-import Item from "../Components/Item";
+import Item from "./Item";
 
 const ItemList = ({ card }) => {
   console.log(card);

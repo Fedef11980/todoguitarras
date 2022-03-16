@@ -11,6 +11,9 @@ function App() {
       <NavBar />
       <ItemListContainer titulo={title} />
       <ItemCounter />
+      
+
+
     </div>
   );
 }

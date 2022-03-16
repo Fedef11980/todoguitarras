@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ItemList from "../Components/ItemList";
+import ItemList from "./ItemList";
 
 const printGuitars = () => {
   return new Promise((resolve, reject) => {
