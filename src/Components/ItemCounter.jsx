@@ -16,7 +16,7 @@ const ItemCounter = () => {
       <div className="card" style={{ width: "15rem" }}>
         <p className="card-title text-center card-header"> Gibson</p>
         <img
-          src="../img/GibsonFlyingV.png"
+          src="../img/gibsonFlyingV.png"
           className="card-img-top"
           alt="guitarra"
         />
