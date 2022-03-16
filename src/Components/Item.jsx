@@ -11,7 +11,7 @@ const Item = ({ item }) => {
           <p className="fw-light"> {item?.description}</p>
           <div className="d-flex justify-content-center ">
             <button className="btn btn-dark"> - </button>
-            <button className="btn btn-white text-center"></button>git
+            <button className="btn btn-white text-center"></button>
             <button className="btn btn-dark"> + </button>
           </div>
           <hr />
