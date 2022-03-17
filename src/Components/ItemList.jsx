@@ -5,8 +5,8 @@ const ItemList = ({ card }) => {
   console.log(card);
   return (
     <div>
-      {card?.map((item) => (
-        <Item item={item} />
+      {card?.map((item, i) => (
+        <Item key={i} item={item} />
       ))}
     </div>
   );

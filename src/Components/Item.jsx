@@ -2,17 +2,14 @@ import React from "react";
 
 const Item = ({ item }) => {
   return (
-    <div className="container py-5">
-      <div className="card" style={{ width: "15rem" }}>
-        <p className="card-title text-center card-header"> {item?.marca}</p>
-        <img src={item?.pictureURL} className="card-img-top" alt="guitarra" />
-        <div className="card-body">
-          <p className="fw-light"> {item?.model}</p>
-          <p className="fw-light"> {item?.description}</p>
-          <div className="d-flex justify-content-center ">
-            <button className="btn btn-dark"> - </button>
-            <button className="btn btn-white text-center"></button>
-            <button className="btn btn-dark"> + </button>
+    <div className="row row-cols-1 row-cols-md-3 g-3">
+      <div className="col">
+        <div className="card">
+          <img src={item?.pictureURL} className="card-img-top" alt="guitarra" />
+          <div className="card-body">
+            <h5 className="card-title text-center">{item?.marca}</h5>
+            <p className="card-text">Modelo: {item?.model}</p>
+            <p className="card-text">Descripción: {item?.description}</p>
           </div>
           <hr />
           <div className="d-flex justify-content-center">
