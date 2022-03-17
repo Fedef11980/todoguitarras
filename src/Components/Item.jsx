@@ -5,11 +5,15 @@ const Item = ({ item }) => {
     <div className="row row-cols-1 row-cols-md-3 g-3">
       <div className="col">
         <div className="card">
+        <p className="card-title text-center card-header"> {item?.marca}</p>
           <img src={item?.pictureURL} className="card-img-top" alt="guitarra" />
           <div className="card-body">
-            <h5 className="card-title text-center">{item?.marca}</h5>
+            
             <p className="card-text">Modelo: {item?.model}</p>
-            <p className="card-text">Descripción: {item?.description}</p>
+            <div className="d-flex justify-content-center">
+            <button type="button" class="btn btn-dark">Ver Descripción</button>
+            </div>
+            
           </div>
           <hr />
           <div className="d-flex justify-content-center">
