@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import ItemDetails from "./ItemDetails";
 
 const ItemDetailContainer = () => {
-  const [guitarra, setGuitarras] = useState([]);
+  const [guitarra, setGuitarras] = useState();
   useEffect(() => {
     const obtenerGuitar = () => {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
-          let guitarra = [
+          let guitarra = 
             {
               id: 5,
               marca: "Gibson",
@@ -17,8 +17,7 @@ const ItemDetailContainer = () => {
               price: 2570,
               stock: 3,
               pictureURL: "../public/img/lesPaulStudio.jpg",
-            },
-          ];
+            }          
           if (guitarra.length === 0) {
             reject("Consultar Stock");
           } else {
@@ -28,15 +27,14 @@ const ItemDetailContainer = () => {
       });
     };
     obtenerGuitar().then((guitarra) => {
-      console.log(guitarra);
-      setGuitarras([...guitarra]);
+      console.log(guitarra)
+      setGuitarras(guitarra);
     });
-  });
-
+  },[]);
   return (
     <div>
       <div className="row row-cols-1 row-cols-md-3 g-3">
-        <ItemDetails {...guitarra} />
+        <ItemDetails guitarra = {guitarra} />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 
 function ItemCounter() {
-  return <div>Contador</div>;
+  return <div></div>;
 }
 
 export default ItemCounter;
