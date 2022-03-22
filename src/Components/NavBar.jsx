@@ -1,120 +1,77 @@
 import React from "react";
 import CartWidget from "./CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light text-white bg-dark">
-        <div className="container-fluid">
+      <h2 className="justify-content-center px-5">Todo Guitarra</h2>
+        <div className="d-flex justify-content-between">          
           <ul className="navbar-nav">
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown ">
               <a
-                className="nav-link dropdown-toggle text-white"
-                href={URL}
+                className="nav-link dropdown-toggle text-white" to="/guitars"               
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-              >
-                {" "}
-                Guitarras{" "}
+              >Guitarras
               </a>
               <ul
-                className="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
+                className="dropdown-menu"  
+                aria-labelledby="navbarDropdownMenuLink">
                 <li>
-                  {" "}
-                  <a className="dropdown-item" href={URL}>
-                    {" "}
-                    Electricas{" "}
-                  </a>
+                  <Link className="dropdown-item" to="/guitars/electricas">Electricas</Link>
                 </li>
                 <li>
-                  {" "}
-                  <a className="dropdown-item" href={URL}>
-                    {" "}
-                    Acusticas{" "}
-                  </a>
-                </li>
+                  <Link className="dropdown-item"to="/guitars/electroAcusticas">Acusticas</Link>
+                </li>         
                 <li>
-                  {" "}
-                  <a className="dropdown-item" href={URL}>
-                    {" "}
-                    Electroacusticas{" "}
-                  </a>
+                  <Link className="dropdown-item" to="/guitars/acusticas">Electroacusticas</Link>
                 </li>
               </ul>
             </li>
-
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle text-white"
-                href={URL}
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-              >
-                {" "}
-                Amplificadores{" "}
+              >Amplificadores
               </a>
               <ul
                 className="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
+                aria-labelledby="navbarDropdownMenuLink">
                 <li>
-                  <a className="dropdown-item" href={URL}>
-                    Valvulares
-                  </a>
+                  <a className="dropdown-item">Valvulares</a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href={URL}>
-                    Transistores{" "}
-                  </a>
+                  <a className="dropdown-item">Transistores</a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href={URL}>
-                    {" "}
-                    Amp. Acusticos{" "}
-                  </a>
+                  <a className="dropdown-item">Amp. Acusticos</a>
                 </li>
               </ul>
             </li>
-
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle text-white"
-                href={URL}
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-              >
-                {" "}
-                Multiefectos{" "}
+              >Multiefectos
               </a>
               <ul
                 className="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  {" "}
-                  <a className="dropdown-item" href={URL}>
-                    {" "}
-                    Pedales{" "}
-                  </a>
+                aria-labelledby="navbarDropdownMenuLink">
+                <li>                 
+                  <a className="dropdown-item">Pedales</a>
                 </li>
-                <li>
-                  {" "}
-                  <a className="dropdown-item" href={URL}>
-                    {" "}
-                    Multiefectos{" "}
-                  </a>
+                <li>                 
+                  <a className="dropdown-item">Multiefectos</a>
                 </li>
-                <li>
-                  {" "}
-                  <a className="dropdown-item" href={URL}>
-                    {" "}
-                    Racks{" "}
-                  </a>
+                <li>                  
+                  <a className="dropdown-item">Racks</a>
                 </li>
               </ul>
             </li>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 
 const printGuitars = () => {
@@ -14,6 +15,7 @@ const printGuitars = () => {
           price: 1800,
           stoc: 3,
           picture: "../public/img/GibsonFlyingV.png",
+          categoria:"electricas",  
         },
         {
           id: 2,
@@ -24,6 +26,7 @@ const printGuitars = () => {
           price: 800,
           stock: 4,
           pictureURL: "../public/img/jacksonVKing.jpg",
+          categoria:"electricas",
         },
         {
           id: 3,
@@ -34,16 +37,39 @@ const printGuitars = () => {
           price: 1200,
           stock: 3,
           pictureURL: "../public/img/fenderStrato.jpg",
+          categoria:"electricas",
         },
         {
           id: 4,
           marca: "Ibanez S",
           description:
-            "Diapasón de palisandro. El palo de rosa proporciona un tono sólido bien equilibrado con un rango medio enfocado               El mástil Wizard delgado, plano y rápido de Ibanez es fuerte y resistente y ofrece una jugabilidad ilimitada y cuenta con un diapasón de 24 trastes de dos octavas para una amplia gama tonal. Las pastillas Quantum proporcionan una respuesta de graves acelerada para un seguimiento excepcionalmente rápido de riffs staccato de alta velocidad con un rango medio aplastante y una articulación precisa de gama alta",
+            "Diapasón de palisandro. El palo de rosa proporciona un tono sólido bien equilibrado con un rango medio enfocado. El mástil Wizard delgado, plano y rápido de Ibanez es fuerte y resistente y ofrece una jugabilidad ilimitada y cuenta con un diapasón de 24 trastes de dos octavas para una amplia gama tonal. Las pastillas Quantum proporcionan una respuesta de graves acelerada para un seguimiento excepcionalmente rápido de riffs staccato de alta velocidad con un rango medio aplastante y una articulación precisa de gama alta",
           model: "521S",
           price: 570,
           stock: 6,
           pictureURL: "../public/img/ibanez521S.jpg",
+          categoria:"electricas",
+        },
+        {
+          id: 5,
+              marca: "Gibson",
+              description:
+                "Ebony de la serie Gibson USA Modern ofrece el auténtico sonido de la Les Paul. El cuerpo de caoba ligera con reducción de peso asi como el mástil de caoba encolado con un delgado perfil promete alta ergonomía incluso durante largas sesiones de grabación o conciertos.",
+              model: "Les Paul Studio",
+              price: 2570,
+              stock: 3,
+              pictureURL: "../public/img/lesPaulStudio.jpg",
+        },
+        {
+          id: 6,
+          marca: "Taylor",
+          description:
+            "Escala: 25-1/2 Nut & Saddle: Tusq. Bracing: Nylon Bracing. Truss Rod Cover: Indian Rosewood. Pickguard: No. Número de trastes: 20. Clavijas: Nylon Nickel w/Pearloid Buttons. Estuche: Taylor Standard Hardshell Black. Encordado de fabrica: DAddario Classical Extra Hard Tension. Largo de cuerpo: 20",
+          model: "314ce",
+          price: 2200,
+          stock: 3,
+          pictureURL: "../public/img/taylor314.jpg",
+          categoria:"electroAcusticas",
         },
       ];
       if (guitars === 0) {
@@ -55,27 +81,35 @@ const printGuitars = () => {
   });
 };
 
-const ItemListContainer = ({ titulo }) => {
+const ItemListContainer = () => {
+
   const [productos, setProducts] = useState();
+
+  const {categoryId}=useParams()
+    console.log(categoryId)
+
+
   useEffect(() => {
     printGuitars()
-      .then((guitars) => {
-        setProducts(guitars);
-        return guitars;
+      .then((guitar) => {
+        setProducts(guitar);
+        return guitar;
       })
-      .then((stock) => {
-        if (stock.lenght === 2) throw new Error("Quedán 2 en sotck");
+      .then((res) => {
+        if(!categoryId){
+          setProducts(res)
+        } else { 
+          setProducts (res.filter( (prod)=> prod.categoria === categoryId))
+        }
       })
       .catch((err) => {
         console.log("Consulto Stock" + err);
       });
-  }, []);
-
-  console.log(productos);
-
+  }, [categoryId]);
+  
   return (
     <div>
-      <h1 className="text-center py2">{titulo}</h1>
+      <h1 className="text-center py2">Todo Guitarra</h1>
       <ItemList card={productos} />
     </div>
   );

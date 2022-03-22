@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
   return (
@@ -12,9 +13,7 @@ const Item = ({ item }) => {
           </div>
           <hr />
           <div className="d-flex justify-content-center">
-            <button type="button" className="btn btn-dark">
-              <strong>Ver detalles</strong>
-            </button>
+            <Link to={`/detail/${id}`}> <button type="button" className="btn btn-dark"><strong>Ver detalles</strong></button></Link>
           </div>
         </div>
       </div>
