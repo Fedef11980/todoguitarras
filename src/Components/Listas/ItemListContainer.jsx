@@ -86,8 +86,7 @@ const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
 
   const { categoryId } = useParams();
-  console.log(categoryId);
-
+  
   useEffect(() => {
     printGuitars()
       .then((res) => {

@@ -6,17 +6,16 @@ const NavBar = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light text-white bg-dark">
-      <h2 className="justify-content-center px-5">Todo Guitarra</h2>
+      <Link className="justify-content-center px-5"to="/"><h2>Todo Guitarra</h2></Link>
         <div className="d-flex justify-content-between">          
           <ul className="navbar-nav">
             <li className="nav-item dropdown ">
-              <a
+              <Link
                 className="nav-link dropdown-toggle text-white" to="/guitars"               
                 role="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >Guitarras
-              </a>
+                aria-expanded="false" 
+                >Guitarras</Link>
               <ul
                 className="dropdown-menu"  
                 aria-labelledby="navbarDropdownMenuLink">
@@ -77,6 +76,8 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
+        <Link to="/Nosotros" className="text-white"><h4>Nosotros</h4></Link>
+        <Link to="/Contacto" className="text-white"><h4>Contacto</h4></Link>
         <CartWidget />
       </nav>
     </div>
