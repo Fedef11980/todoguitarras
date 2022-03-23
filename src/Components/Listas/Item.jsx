@@ -7,7 +7,11 @@ const Item = ({ item }) => {
       <div className="col">
         <div className="card">
           <p className="card-title text-center card-header"> {item?.marca}</p>
-          <img src={item?.pictureURL} className="card-img-top" alt="guitarra" />
+          <img
+            src={item?.pictureURL}
+            className="card-img-top"
+            alt={item?.pictureURL}
+          />
           <div className="card-body">
             <p className="card-text">Modelo: {item?.model}</p>
           </div>
