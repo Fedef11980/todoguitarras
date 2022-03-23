@@ -13,7 +13,11 @@ const Item = ({ item }) => {
           </div>
           <hr />
           <div className="d-flex justify-content-center">
-            <Link to={`/detail/${id}`}> <button type="button" className="btn btn-dark"><strong>Ver detalles</strong></button></Link>
+            <Link to={`/detail/${item?.id}`}>
+              <button type="button" className="btn btn-dark">
+                <strong>Ver detalles</strong>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

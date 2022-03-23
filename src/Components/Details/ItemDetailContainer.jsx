@@ -1,31 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemDetails from "./ItemDetails";
-import {guitars} from "../../Listas/ItemListContainer";
+import { printGuitars } from "../../Listas/ItemListContainer";
+import { ItemDetail } from "./Detail/ItemDetail";
 
 const ItemDetailContainer = () => {
+  const [item, setItem] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const [ item,setItem]= useState (null)
-  const [loading, setLoading] = useState(true)
+  const { itemId } = useParams();
+  console.log(itemId);
 
-  const {itemId} =useParams()
-    console.log(itemId)
+  useEffect(() => {
+    printGuitars()
+      .then((res) => {
+        setItem(res.find((prod) => prod.id === Number(itemId)));
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [itemId]);
 
-
-  useEffect(()=>{
-    guitars()
-            .then((res) => {
-                setItem( res.find((prod) => prod.id === Number(itemId)) )
-            })
-            .finally(() => {
-                setLoading(false)
-            })
-  },[])
-
-
-
-
- /*  const [guitarra, setGuitarras] = useState();  
+  /*  const [guitarra, setGuitarras] = useState();  
   useEffect(() => {
     const obtenerGuitar = () => {
       return new Promise((resolve, reject) => {
@@ -55,17 +50,11 @@ const ItemDetailContainer = () => {
     });
   },[]); */
 
-  
-
   return (
     <div>
-      {
-         loading
-         ? <h2>Cargando...</h2>
-         : <ItemDetails {...item}/>
-      }
+      {loading ? <h2>Cargando...</h2> : <ItemDetail guitarra={item} />}
 
-     {/*  <div className="row row-cols-1 row-cols-md-3 g-3">
+      {/*  <div className="row row-cols-1 row-cols-md-3 g-3">
         <ItemDetails guitarra = {guitarra} />
       </div>  */}
     </div>
