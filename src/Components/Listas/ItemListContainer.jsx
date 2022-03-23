@@ -10,7 +10,7 @@ const guitars = [
       "Están hechas con madera Korina, una marca comercial de limba, una madera similar pero más ligera que la caoba. Los primeros prototipos se fabricaron en 1957. Estas Flying V, junto con las Explorer e, inicialmente, la Moderne, formaban una línea modernista diseñada por el entonces presidente Ted McCarty. Estos diseños buscaban darle un aspecto más futurista a la imagen de Gibson, pero no tuvieron éxito en las ventas. La línea inicial lanzada en 1958 se dejó de fabricar en 1959.",
     model: "Flying V",
     price: 1800,
-    stoc: 3,
+    stock: 3,
     picture: "/img/gibsonFlyingV.png",
     categoria: "electricas",
   },
