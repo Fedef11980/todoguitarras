@@ -18,10 +18,7 @@ function ItemDetail({ guitarra }) {
               <h1 className="card-title">{guitarra?.marca}</h1>
               <h3 className="card-title">{guitarra?.model} </h3>
               <p className="card-text">{guitarra?.description}</p>
-              <p className="card-text">
-                <small className="text-muted">U$S: {guitarra?.price}</small>
-              </p>
-              <ItemCounter />
+              <p className="card-text text-muted">U$S: {guitarra?.price}</p>
             </div>
           </div>
         </div>

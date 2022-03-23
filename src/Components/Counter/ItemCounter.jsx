@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ItemCounter = ({ guitar }) => {
+const ItemCounter = () => {
   const [contador, setContador] = useState;
 
   const sumar = () => {
