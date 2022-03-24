@@ -1,21 +1,8 @@
-import React, { useState } from "react";
+import React from "react"
 import ItemCounter from "../Counter/ItemCounter";
 
 const ItemDetail = ({ guitarra }) => {
-  const [contador, setContador] = useState(0);
-
-  const agregar = () => {
-    const cart =
-      { 
-        {guitarra?.id}
-        {guitarra?.nombre}
-        {guitarra?.precio}
-        {guitarra?.pictureURL}
-        contador,
-       } 
-        console.log(cart);
-  };
-
+  
   return (
     <>
       <div className="card mb-3 max-width:600px">
@@ -28,12 +15,9 @@ const ItemDetail = ({ guitarra }) => {
             />
             <ItemCounter
               max={guitarra?.stock}
-              contdor={contador}
-              setContador={setContador}
-              agregar={agregar}
+              product={guitarra}
             />
           </div>
-
           <div className="col-md-8">
             <div className="card-body">
               <h1 className="card-title">{guitarra?.marca}</h1>

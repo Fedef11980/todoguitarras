@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
-const ItemCounter = ({ max, contador, setContador, agregar }) => {
-  const sumar = () => {
-    contador < { max } && setContador(contador + 1);
-  };
+
+const ItemCounter = ({ max, product }) => {
+
+  const [contador, setContador] = useState(0)
+  const [cart,setCart] = useState()
 
   const restar = () => {
     contador > 1 && setContador(contador - 1);
   };
+
+  const sumar = () => {
+    contador < max  && setContador(contador + 1);
+  };
+
+const agregar=()=>{
+    setCart(product)
+  }
+
+  console.log(cart)
 
   return (
     <div className="p-1 text-center">
