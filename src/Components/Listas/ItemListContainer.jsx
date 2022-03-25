@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 
-const guitars = [
+const instruments = [
   {
     id: 1,
     marca: "Gibson",
@@ -11,7 +11,7 @@ const guitars = [
     model: "Flying V",
     price: 1800,
     stock: 3,
-    picture: "/img/gibsonFlyingV.png",
+    picture: "/img/gibsonFlyingV.jpg",
     categoria: "electricas",
   },
   {
@@ -68,14 +68,47 @@ const guitars = [
     pictureURL: "/img/taylor314.jpg",
     categoria: "electroAcusticas",
   },
+  {
+    id: 7,
+    marca: "Mayones",
+    description:
+      "Mayones Guitars & Basses, established in 1982, is a manufacturer of electric guitars and bass guitars, located in Gdańsk, Poland. They specialize in building handcrafted and custom instruments. Mayones instruments are truly handmade in a traditional luthier style accompanied with state-of-art technology and equipped with top class components. The result is always the same a top notch instrument with soul and built-in inspiration. All Mayones instruments are 100% handcrafted",
+    model: "Duvel",
+    price: 2200,
+    stock: 2,
+    pictureURL: "/img/mayonesDuvell.jpg",
+    categoria: "electricas",
+  },
+  {
+    id: 8,
+    marca: "Fender",
+    description:
+      "Richie Kotzen es considerado uno de los mejores y más versátiles guitarristas y celebrado tanto con sus álbumes en solitario como como miembro de bandas como Mr. Big o Poison. En cooperación con Fender, Richie Kotzen desarrolló un instrumento de firma basado en la Telecaster que satisface sus altas exigencias en sonido y manejo. La Fender Richie Kotzen Signature Telecaster tiene un cuerpo de fresno coronado por una atractiva tapa de arce rizado. El mástil de arce se atornilla al cuerpo según la tradición de Fender y tiene un diapasón de arce, que está equipado con 22 trastes jumbo. El radio plano del diapasón de 12 garantiza una jugabilidad cómoda incluso con piezas rápidas.",
+    model: "Telecaster",
+    price: 2350,
+    stock: 2,
+    pictureURL: "/img/fenderTele.jpg",
+    categoria: "electricas",
+  },
+  {
+    id: 9,
+    marca: "Laney",
+    description:
+      "Laney IRT Studio. 15W (2xEL84). 3 Canales: clean, rhythm y lead. Clean booster regulable y seleccionable por canal. 2 Secciones de EQ de 3 bandas: una común para el canal clean y rhythm y una exclusiva para el canal de lead. EQ con potenciometros Push-Pull y función frecuency shift. Control de tono. Reverb, función dinámica regulable (speaker damping). Reductor de potencia: del máximo a menos de 1W. Salida de altavoz con emulador operativo incluso sin pantalla. Puerto USB para salida de grabación y conexión con el ordenador y función re-amp. 2 unidades de rack. Entrada MP3.",
+    model: "IRT Studio",
+    price: 900,
+    stock: 2,
+    pictureURL: "/img/laneyStudio.jpg",
+    categoria: "ampsV",
+  },
 ];
 export const printGuitars = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (guitars.length === 0) {
+      if (instruments.length === 0) {
         reject("Consultar Stock");
       } else {
-        resolve(guitars);
+        resolve(instruments);
       }
     }, 2000);
   });
@@ -86,7 +119,7 @@ const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
 
   const { categoryId } = useParams();
-  
+
   useEffect(() => {
     printGuitars()
       .then((res) => {

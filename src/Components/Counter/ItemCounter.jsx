@@ -1,24 +1,22 @@
 import React, { useState } from "react";
 
-
 const ItemCounter = ({ max, product }) => {
-
-  const [contador, setContador] = useState(0)
-  const [cart,setCart] = useState()
+  const [contador, setContador] = useState(0);
+  const [cart, setCart] = useState();
 
   const restar = () => {
     contador > 1 && setContador(contador - 1);
   };
 
   const sumar = () => {
-    contador < max  && setContador(contador + 1);
+    contador < max && setContador(contador + 1);
   };
 
-const agregar=()=>{
-    setCart(product)
-  }
+  const agregar = () => {
+    setCart(product);
+  };
 
-  console.log(cart)
+  console.log(cart);
 
   return (
     <div className="p-1 text-center">
@@ -35,7 +33,7 @@ const agregar=()=>{
         className="btn btn-warning btn-lg d-grid mx-auto my-2"
         onClick={agregar}
       >
-        Comprar
+        Agregar al carrito
       </button>
     </div>
   );
