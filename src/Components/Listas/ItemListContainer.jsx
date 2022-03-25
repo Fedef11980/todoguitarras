@@ -30,8 +30,8 @@ const instruments = [
     marca: "Fender",
     description:
       "La Stratocaster es una guitarra de cuerpo macizo, obtenido a partir de una a tres piezas de madera. El mástil va unido atornillado, salvo en algunos modelos Custom, donde se encola o es una única pieza (Neck-through). Originalmente el cuerpo era de fresno del sur (swamp ash), una madera dura y porosa.",
-    model: "Stratocaster",
-    price: 1200,
+    model: "Stratocaster YJM",
+    price: 2200,
     stock: 3,
     pictureURL: "/img/fenderStrato.jpg",
     categoria: "electricas",
@@ -39,9 +39,8 @@ const instruments = [
   {
     id: 4,
     marca: "Ibanez S",
-    description:
-      "Diapasón de palisandro. El palo de rosa proporciona un tono sólido bien equilibrado con un rango medio enfocado. El mástil Wizard delgado, plano y rápido de Ibanez es fuerte y resistente y ofrece una jugabilidad ilimitada y cuenta con un diapasón de 24 trastes de dos octavas para una amplia gama tonal. Las pastillas Quantum proporcionan una respuesta de graves acelerada para un seguimiento excepcionalmente rápido de riffs staccato de alta velocidad con un rango medio aplastante y una articulación precisa de gama alta",
-    model: "521S",
+    description: "La guitarra eléctrica S Series S771PB de Ibanez presenta un cuerpo de caoba ligero y esculpido con una tapa de madera de álamo en un acabado plano natural y un mástil de arce atornillado Wizard III con un diapasón de palisandro de 24 trastes encuadernados e incrustaciones de puntos blancos compensados. . El sólido cuerpo de doble cutaway brinda la máxima resonancia y sustain, mientras que el mástil Wizard III es delgado, plano y rápido, pero fuerte, y brinda una jugabilidad ilimitada para el músico más exigente.",
+    model: "771PB",
     price: 570,
     stock: 6,
     pictureURL: "/img/ibanez521S.jpg",
@@ -84,7 +83,7 @@ const instruments = [
     marca: "Fender",
     description:
       "Richie Kotzen es considerado uno de los mejores y más versátiles guitarristas y celebrado tanto con sus álbumes en solitario como como miembro de bandas como Mr. Big o Poison. En cooperación con Fender, Richie Kotzen desarrolló un instrumento de firma basado en la Telecaster que satisface sus altas exigencias en sonido y manejo. La Fender Richie Kotzen Signature Telecaster tiene un cuerpo de fresno coronado por una atractiva tapa de arce rizado. El mástil de arce se atornilla al cuerpo según la tradición de Fender y tiene un diapasón de arce, que está equipado con 22 trastes jumbo. El radio plano del diapasón de 12 garantiza una jugabilidad cómoda incluso con piezas rápidas.",
-    model: "Telecaster",
+    model: "Telecaster R. Kotzen",
     price: 2350,
     stock: 2,
     pictureURL: "/img/fenderTele.jpg",

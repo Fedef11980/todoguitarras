@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
   return (
-    <div className="row-cols-md-4 g-4">
-      <div className="col">
-        <div className="card">
-          <p className="card-title text-center card-header">{item?.marca}</p>
+    <div className="container">
+    
+        <div className="card-colums p-3">
+          <h3 className="card-title text-center card-header">{item?.marca}</h3>
           <img
             src={item?.pictureURL}
             alt={item?.pictureURL}
             className="card-img-top"
           />
           <div className="card-body">
-            <p className="card-text">Modelo: {item?.model}</p>
+            <p className="card-text text-center">Modelo: {item?.model}</p>
           </div>
 
           <div className="d-flex justify-content-center pb-3">
@@ -25,7 +25,7 @@ const Item = ({ item }) => {
           </div>
         </div>
       </div>
-    </div>
+     
   );
 };
 

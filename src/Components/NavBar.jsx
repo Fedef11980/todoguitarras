@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <div className="row">
-      <nav className="navbar navbar-expand-lg navbar-light text-white bg-dark">
-        <Link className="justify-content-center px-3" to="/">
-          <h2>Todo Guitarra</h2>
-        </Link>
-        <div className="d-flex justify-content-center">
+      <nav className="navbar navbar-expand-lg justify-content-around navbar-light text-white bg-dark">        
+        <div className="d-flex justify-content-around p-3">
           <ul className="navbar-nav">
+            <li>
+              <Link className="text-white" to="/">
+                <h2>Todo Guitarra</h2>
+              </Link>
+            </li>
             <li className="nav-item dropdown ">
               <Link
                 className="nav-link dropdown-toggle text-white"
@@ -107,14 +109,18 @@ const NavBar = () => {
                 </li>
               </ul>
             </li>
+            <li>
+              <Link to="/Nosotros" className="text-white">
+                <h4>Nosotros</h4>
+               </Link>
+            </li>
+            <li>
+              <Link to="/Contacto" className="text-white">
+                <h4>Contacto</h4>
+              </Link>
+            </li>
           </ul>
-        </div>
-        <Link to="/Nosotros" className="text-white">
-          <h4>Nosotros</h4>
-        </Link>
-        <Link to="/Contacto" className="text-white">
-          <h4>Contacto</h4>
-        </Link>
+        </div>        
         <CartWidget />
       </nav>
     </div>
