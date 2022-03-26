@@ -1,8 +1,6 @@
 .fondo {
-    
-    background-color: rgb(223, 223, 223);
-
+  background-color: rgb(223, 223, 223);
 }
-.tarjeta{
-    height: 450px;
+.tarjeta {
+  max-height: 500px;
 }
