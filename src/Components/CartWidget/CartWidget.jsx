@@ -1,8 +1,13 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 
-const CartWidget = () => {
-  return <FaShoppingCart />;
+export const CartWidget = () => {
+  return (
+    <div>
+      <button type="button" className="btn btn-light">
+        Carrito <span class="badge bg-secondary">4</span>
+      </button>
+      {/* <FaShoppingCart /> */}
+    </div>
+  );
 };
-
-export default CartWidget;
