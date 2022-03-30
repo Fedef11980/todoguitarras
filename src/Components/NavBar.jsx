@@ -1,5 +1,5 @@
 import React from "react";
-import { CartWidget } from "./CartWidget/CartWidget";
+
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
@@ -121,8 +121,8 @@ const NavBar = () => {
             </li>
             <li>
               <Link to="/Cart">
-                <button type="button" class="btn btn-light">
-                  Carrito <span class="badge bg-secondary">4</span>
+                <button type="button" className="btn btn-light">
+                  Carrito <span className="badge bg-secondary">4</span>
                 </button>
               </Link>
             </li>

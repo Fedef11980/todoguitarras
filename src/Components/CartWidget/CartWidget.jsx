@@ -1,14 +1,13 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 
-
 export const CartWidget = () => {
   return (
     <div>
+      <FaShoppingCart />
       <button type="button" className="btn btn-light">
-        Carrito <span className="badge bg-secondary">4</span>
+        Compras <span className="badge bg-secondary"></span>
       </button>
-      {/* <FaShoppingCart /> */}
     </div>
   );
 };

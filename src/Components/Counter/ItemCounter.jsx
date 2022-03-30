@@ -15,6 +15,7 @@ const ItemCounter = ({ max, product }) => {
 
   const [agregarIntrumentos, setAgregarInstrumentos] = useState(0);
   const [stockInstrumentos, setStockIntrumentos] = useState(max);
+  console.log(stockInstrumentos);
 
   const agregar = (quantityToAdd) => {
     setAgregarInstrumentos(quantityToAdd);

@@ -1,41 +1,15 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../Context/CartContext"
+import { CartContext } from "../../Context/CartContext";
 
-export const CartItem = ({ productoProp }) => {
-  console.log("productoProp", productoProp);
-
+export const CartItem = ({ imagen, nombre, cantidad, precio }) => {
   const carritoContext = useContext(CartContext);
+
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        flexFlow: "column",
-        background: "pink",
-        margin: "10px",
-      }}
-    >
-      <p> Producto: {productoProp.item.name}</p>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "flex-start",
-          flexFlow: "row",
-        }}
-      >
-        <img
-          style={{ width: 100, height: 100 }}
-          src={productoProp.item.pictureURL}
-          alt="imagen"
-        />
-        <p>Precio: {productoProp.item.price}</p>
-        <br />
-        <p>Cantidad: {productoProp.quantity}</p>
-        <br />
-        <button onClick={() => carritoContext.removeItem(productoProp.item.id)}>
-          Eliminar producto
-        </button>
-      </div>
+    <div clasName="container">
+      <h1>Marca: {nombre}</h1>
+      <img src={imagen} alt="intrumento" />
+      <p>Cantidad: {cantidad}</p>
+      <p>Precio {precio}</p>
     </div>
   );
 };
