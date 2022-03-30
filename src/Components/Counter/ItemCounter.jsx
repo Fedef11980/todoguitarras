@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 
 const ItemCounter = ({ max, product }) => {
-  const [contador, setContador] = useState(0);
-  const [cart, setCart] = useState();
+  const [contador, setContador] = useState(1);
 
   const restar = () => {
     contador > 1 && setContador(contador - 1);
@@ -12,15 +13,21 @@ const ItemCounter = ({ max, product }) => {
     contador < max && setContador(contador + 1);
   };
 
-  const agregar = () => {
-    setCart(product);
+  const [agregarIntrumentos, setAgregarInstrumentos] = useState(0);
+  const [stockInstrumentos, setStockIntrumentos] = useState(max);
+
+  const agregar = (quantityToAdd) => {
+    setAgregarInstrumentos(quantityToAdd);
+    setStockIntrumentos(max - quantityToAdd);
+    carritoContext.addItem(product, quantityToAdd);
   };
 
-  console.log(cart);
+  const carritoContext = useContext(CartContext);
+  console.log(carritoContext);
 
   return (
     <div className="p-1 text-center">
-      <button className="btn btn-outline-dark " onClick={restar}>
+      <button className="btn btn-outline-dark" onClick={restar}>
         -
       </button>
       <span className="mx-3 ">{contador}</span>

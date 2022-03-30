@@ -10,6 +10,7 @@ import Nosotros from "./Components/Nosotros/Nosotros";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { CustomCartContext } from "./Context/CustomCartContext";
 import { Cart } from "./Components/Cart/Cart";
+import {renderizado} from 
 
 const App = () => {
   return (
@@ -19,15 +20,13 @@ const App = () => {
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
           <Route path="ItemDetailContainer" element={<ItemDetailContainer />} />
-          <Route
-            path="/productos/:categoryId"
-            element={<ItemListContainer />}
-          />
-          <Route path="/Cart" element={<Cart />} />
+          <Route path="/productos/:categoryId" element={<ItemListContainer />}/>
+          <Route path="/Cart" element={<Cart/>} />
           <Route path="/detail/:itemId" element={<ItemDetailContainer />} />
           <Route path="Nosotros" element={<Nosotros />} />
           <Route path="Contacto" element={<Contacto />} />
           <Route path="*" element={<Navigate to="/" />} />
+          <Route path ="firebase" element={<FirebaseComponent/>}/>
         </Routes>
       </BrowserRouter>
     </CustomCartContext>

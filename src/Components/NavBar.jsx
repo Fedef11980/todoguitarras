@@ -1,11 +1,11 @@
 import React from "react";
-import {CartWidget} from "./CartWidget/CartWidget";
+import { CartWidget } from "./CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <div className="row">
-      <nav className="navbar navbar-expand-lg justify-content-around navbar-light text-white bg-dark">        
+      <nav className="navbar navbar-expand-lg justify-content-around navbar-light text-white bg-dark">
         <div className="d-flex justify-content-around p-3">
           <ul className="navbar-nav">
             <li>
@@ -112,16 +112,25 @@ const NavBar = () => {
             <li>
               <Link to="/Nosotros" className="text-white">
                 <h4>Nosotros</h4>
-               </Link>
+              </Link>
             </li>
             <li>
               <Link to="/Contacto" className="text-white">
                 <h4>Contacto</h4>
               </Link>
             </li>
+            <li>
+              <Link to="/Cart">
+                <button type="button" class="btn btn-light">
+                  Carrito <span class="badge bg-secondary">4</span>
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link to="firebase">Firebase</Link>
+            </li>
           </ul>
-        </div>        
-        <CartWidget />
+        </div>
       </nav>
     </div>
   );

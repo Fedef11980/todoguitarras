@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CartContext } from "./CartContext"
+import { CartContext } from "./CartContext";
 
 export const CustomCartContext = ({ children }) => {
   const [productosCarrito, setProductosCarrito] = useState([]);
@@ -12,7 +12,7 @@ export const CustomCartContext = ({ children }) => {
     console.log("newProduct", newProduct);
     setProductosCarrito([...productosCarrito, newProduct]);
   };
-
+  /*
   const removeItem = (itemId) => {
     console.log("itemId", itemId);
     const nuevosProductos = productosCarrito.filter(
@@ -24,12 +24,10 @@ export const CustomCartContext = ({ children }) => {
 
   const clear = () => {
     setProductosCarrito([]);
-  };
+  }; */
 
   return (
-    <CartContext.Provider
-      value={{ productosCarrito, addItem, removeItem, clear }}
-    >
+    <CartContext.Provider value={{ productosCarrito, addItem }}>
       {children}
     </CartContext.Provider>
   );
