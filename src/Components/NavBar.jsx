@@ -122,7 +122,7 @@ const NavBar = () => {
             <li>
               <Link to="/Cart">
                 <button type="button" className="btn btn-light">
-                  Carrito <span className="badge bg-secondary">4</span>
+                  Compras <span className="badge bg-secondary"></span>
                 </button>
               </Link>
             </li>

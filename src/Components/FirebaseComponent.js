@@ -4,6 +4,7 @@ import { db } from "../Utils/firebase";
 
 export const FirebaseComponent = () => {
   const [productos, setProductos] = useState();
+  const [producto, setProducto] = useState({});
   useEffect(() => {
     const getData = async () => {
       // referencia en la base de datos de la informacion que quiero obtener
@@ -19,29 +20,49 @@ export const FirebaseComponent = () => {
       //    id: doc.id
       //    data: doc.data
 
+      //almacenamos cada uno de los productos, con su id e informacion en nuevo arreglo
       const dataItems = response.doc.map((doc) => {
         return { id: doc.id, ...doc.data() };
       });
       console.log("dataItems", dataItems);
+      //agregamos los productos desde firestore a nuestra variables productos
       setProductos(dataItems);
 
-      // peticion para un unico documento
+      //peticion para un unico documento
       //creamos  nuestra referencia de ese documento
       //seccion de itemDetailContainer
-      const queryDoc = doc(db, "items", "id que me da firebase");
+      const queryDoc = doc(db, "items", "jvQC7naMGzPwpv7CcBDy");
+      //peticion para obtener el documento desde firestore
       const responseDoc = await getDoc(queryDoc);
+      // obtenemos la informacion de nuestro documento en formato json.
       const dataDoc = responseDoc.data();
-      console.log("indfo-documetnos-unico", dataDoc);
+      console.log("indfo-documentos-unico", dataDoc);
+      //id unico del documento.
       console.log("id-documento-unico", responseDoc.id);
+      //creamos un nuevo objeto con la informacion y el id
       const newDocumento = { id: responseDoc.id, ...dataDoc };
-      console.log("newDocumetno", newDocumento);
+      //asignamos la informacion de nuestro documento a una variable en nuestro proyecto para pasarselo al componente ItemDetail.
+      console.log("newDocumento", newDocumento);
     };
     getData();
   }, []);
 
-  return <div>
+  return(
+    <div>
+        <strong>Coleccion de productos</strong>
+        {productos.map(producto=>(
+            <div key={producto.id} style={{background:"orange", margin:"10px"}}>
+                <p>Title: {producto.title}</p>
+                <img style={{width:"100px"}} src={producto.pictureUrl} alt="imagen"/>
+            </div>
+        ))}
 
-
-      
-  </div>;
+        -------------------
+        <br/>
+        <strong>Documento individual</strong>
+        <div style={{margin:"10px"}}>
+            <em>{JSON.stringify(producto)}</em>
+        </div>
+    </div>
+  )
 };
