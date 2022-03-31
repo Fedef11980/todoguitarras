@@ -14,8 +14,10 @@ const ItemCounter = ({ max, product }) => {
   };
 
   const [agregarIntrumentos, setAgregarInstrumentos] = useState(0);
+  console.log("ItemCounter-agregarinstrumentos", agregarIntrumentos);
+
   const [stockInstrumentos, setStockIntrumentos] = useState(max);
-  console.log(stockInstrumentos);
+  console.log("stock", stockInstrumentos);
 
   const agregar = (quantityToAdd) => {
     setAgregarInstrumentos(quantityToAdd);
@@ -41,7 +43,7 @@ const ItemCounter = ({ max, product }) => {
         className="btn btn-warning btn-lg d-grid mx-auto my-2"
         onClick={agregar}
       >
-        Agregar al carrito
+        Comprar
       </button>
     </div>
   );

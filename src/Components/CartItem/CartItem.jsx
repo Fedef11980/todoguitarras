@@ -3,7 +3,7 @@ import { CartContext } from "../../Context/CartContext";
 
 export const CartItem = ({ imagen, nombre, cantidad, precio }) => {
   const carritoContext = useContext(CartContext);
-  console.log ("carritoContext", carritoContext)
+  console.log("CartItem=carritoContext", carritoContext);
 
   return (
     <div clasName="container">
