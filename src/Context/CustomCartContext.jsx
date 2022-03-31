@@ -9,10 +9,23 @@ export const CustomCartContext = ({ children }) => {
       producto,
       quantity,
     };
+
     console.log("newProduct", newProduct);
     setProductosCarrito([...productosCarrito, newProduct]);
   };
-  /*
+
+
+  const clear = () => {
+    setProductosCarrito([]);
+  };
+
+  const getTotalPrice = ()=>{
+    
+    const totalPrice = productosCarrito.reduce((acc,obj)=>acc+(obj.quantity*obj.price),0)
+    return totalPrice;
+  };
+
+    /*
   const removeItem = (itemId) => {
     console.log("itemId", itemId);
     const nuevosProductos = productosCarrito.filter(
@@ -22,12 +35,8 @@ export const CustomCartContext = ({ children }) => {
     setProductosCarrito(nuevosProductos);
   };*/
 
-  const clear = () => {
-    setProductosCarrito([]);
-  };
-
   return (
-    <CartContext.Provider value={{ productosCarrito, addItem, clear }}>
+    <CartContext.Provider value={{ productosCarrito, addItem, clear, getTotalPrice }}>
       {children}
     </CartContext.Provider>
   );

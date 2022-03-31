@@ -41,7 +41,7 @@ const ItemCounter = ({ max, product }) => {
       <button
         type="button"
         className="btn btn-warning btn-lg d-grid mx-auto my-2"
-        onClick={agregar}
+        onClick={()=>agregar(contador)}
       >
         Comprar
       </button>

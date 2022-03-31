@@ -1,7 +1,7 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 import { CartWidget } from "./CartWidget/CartWidget";
-
 const NavBar = () => {
   return (
     <div className="row">
@@ -121,7 +121,7 @@ const NavBar = () => {
             </li>
             <li>
               <Link to="/Cart">
-                <CartWidget />
+              <CartWidget />
               </Link>
             </li>
             <li>
