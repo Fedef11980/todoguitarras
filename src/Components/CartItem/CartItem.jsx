@@ -6,7 +6,7 @@ export const CartItem = ({ imagen, nombre, cantidad, precio }) => {
   console.log("CartItem=carritoContext", carritoContext);
 
   return (
-    <div clasName="container">
+    <div className="container">
       <h1>Marca: {nombre}</h1>
       <img src={imagen} alt="instrumento" />
       <p>Cantidad: {cantidad}</p>

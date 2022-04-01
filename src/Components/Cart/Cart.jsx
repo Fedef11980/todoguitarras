@@ -10,36 +10,34 @@ export const Cart = () => {
 
   return (
     <div className="container">
-      <div className="row">
-        {productosCarrito.length > 0 ? (
+      {productosCarrito.length > 0 ? (
+        <div>
+          {productosCarrito.map((item) => (
+            <CartItem
+              key={item?.producto.id}
+              imagen={item?.producto.pictureURL}
+              nombre={item?.producto.marca}
+              cantidad={item?.quantity}
+              precio={item?.producto.price}
+              productoProp={item}
+            />
+          ))}
           <div>
-            {productosCarrito.map((item) => (
-              <CartItem
-                key={item?.producto.id}
-                imagen={item?.producto.pictureURL}
-                nombre={item?.producto.marca}
-                cantidad={item?.quantity}
-                precio={item?.producto.price}
-                productoProp={item}
-              />
-            ))}
-            <div>
-              <p>Total:${totalPrice()} </p>
-            </div>
+            <p>Total:$ {carritoContext.totalPrice()} </p>
           </div>
-        ) : (
-          <div>
-            <p>No hay productos</p>
-            <button
-              type="button"
-              className="btn btn-danger text-white"
-              onClick={carritoContext.clear}
-            >
-              Vaciar carrito
-            </button>
-          </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div>
+          <p>No hay productos</p>
+          <button
+            type="button"
+            className="btn btn-danger text-white"
+            onClick={carritoContext.clear}
+          >
+            Vaciar carrito
+          </button>
+        </div>
+      )}
     </div>
   );
 };

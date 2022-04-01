@@ -20,11 +20,11 @@ export const CustomCartContext = ({ children }) => {
 
   const totalPrice = () => {
     return productosCarrito.reduce(
-      (acc, prod) => acc + prod.item.price * prod.count,
+      (acc, prod) => acc + prod.producto.price * prod.quantity,
       0
     );
   };
-  console.log(totalPrice);
+  console.log("Precio total", totalPrice());
 
   const contadorCarritoNavBar = () => {
     const totalproductos = productosCarrito.reduce(
