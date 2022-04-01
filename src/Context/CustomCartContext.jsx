@@ -14,18 +14,27 @@ export const CustomCartContext = ({ children }) => {
     setProductosCarrito([...productosCarrito, newProduct]);
   };
 
-
   const clear = () => {
     setProductosCarrito([]);
   };
 
-  const getTotalPrice = ()=>{
-    
-    const totalPrice = productosCarrito.reduce((acc,obj)=>acc+(obj.quantity*obj.price),0)
-    return totalPrice;
+  const totalPrice = () => {
+    return productosCarrito.reduce(
+      (acc, prod) => acc + prod.item.price * prod.count,
+      0
+    );
+  };
+  console.log(totalPrice);
+
+  const contadorCarritoNavBar = () => {
+    const totalproductos = productosCarrito.reduce(
+      (acc, producto) => acc + producto.quantity,
+      0
+    );
+    return totalproductos;
   };
 
-    /*
+  /*
   const removeItem = (itemId) => {
     console.log("itemId", itemId);
     const nuevosProductos = productosCarrito.filter(
@@ -36,7 +45,15 @@ export const CustomCartContext = ({ children }) => {
   };*/
 
   return (
-    <CartContext.Provider value={{ productosCarrito, addItem, clear, getTotalPrice }}>
+    <CartContext.Provider
+      value={{
+        productosCarrito,
+        addItem,
+        clear,
+        totalPrice,
+        contadorCarritoNavBar,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
