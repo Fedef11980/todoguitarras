@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
+//import { GoTrashcan } from "react-icons/Go";
 
-export const CartItem = ({ imagen, nombre, cantidad, precio }) => {
+export const CartItem = ({ imagen, nombre, cantidad, precio, id }) => {
   const carritoContext = useContext(CartContext);
   console.log("CartItem=carritoContext", carritoContext);
 
@@ -11,6 +12,13 @@ export const CartItem = ({ imagen, nombre, cantidad, precio }) => {
       <img src={imagen} alt="instrumento" />
       <p>Cantidad: {cantidad}</p>
       <p>Precio {precio}</p>
+      <button
+        onClick={() => {
+          carritoContext.removeItem(id);
+        }}
+      >
+        Eliminar
+      </button>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
+
 
 const ItemCounter = ({ max, product }) => {
   const [contador, setContador] = useState(1);
@@ -41,10 +43,19 @@ const ItemCounter = ({ max, product }) => {
       <button
         type="button"
         className="btn btn-warning btn-lg d-grid mx-auto my-2"
-        onClick={()=>agregar(contador)}
+        onClick={() => agregar(contador)}
       >
         Comprar
       </button>
+
+      {agregarIntrumentos > 0 && (
+        <div className="container">
+          <Link to="/*"> Seguir comprando </Link>
+
+          <Link to="/Cart">Finalizar compras</Link>
+        </div>
+      )}
+      
     </div>
   );
 };

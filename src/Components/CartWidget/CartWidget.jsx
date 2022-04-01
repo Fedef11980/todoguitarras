@@ -1,6 +1,7 @@
 import React from "react";
 import { CartContext } from "../../Context/CartContext";
 import { useContext } from "react";
+import { FaShoppingCart } from "react-icons/fa";
 
 export const CartWidget = () => {
   const carritoContext = useContext(CartContext);
@@ -9,9 +10,9 @@ export const CartWidget = () => {
   return (
     <div>
       {
-        <button type="button" className="btn btn-warning">
-          Ver Carrito
-          <span className="badge bg-secondary">
+        <button type="button" className="btn btn-warning ">
+          <FaShoppingCart />
+          <span className="badge bg-secondary m-2">
             {carritoContext.contadorCarritoNavBar()}
           </span>
         </button>

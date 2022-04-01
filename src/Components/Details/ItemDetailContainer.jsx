@@ -5,10 +5,11 @@ import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
+
   const [loading, setLoading] = useState(true);
 
   const { itemId } = useParams();
-  console.log(itemId);
+  //console.log(itemId);
 
   useEffect(() => {
     printGuitars()
@@ -19,13 +20,8 @@ const ItemDetailContainer = () => {
         setLoading(false);
       });
   }, [itemId]);
-
   return (
-    <div>
-      {loading ? <h2>Cargando...</h2> : <ItemDetail guitarra={item} />}
-
-     
-    </div>
+    <div>{loading ? <h2>Cargando...</h2> : <ItemDetail guitarra={item} />}</div>
   );
 };
 

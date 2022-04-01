@@ -28,7 +28,7 @@ const NavBar = () => {
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <Link className="dropdown-item" to="/instruments/electricas">
+                  <Link className="dropdown-item" to="/productos/electricas">
                     Electricas
                   </Link>
                 </li>
@@ -41,7 +41,7 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/instruments/acusticas">
+                  <Link className="dropdown-item" to="/productos/acusticas">
                     Electroacusticas
                   </Link>
                 </li>
@@ -62,17 +62,17 @@ const NavBar = () => {
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <Link className="dropdown-item" to="/instruments/ampsV">
+                  <Link className="dropdown-item" to="/productos/ampsV">
                     Valvulares
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/instruments/ampsT">
+                  <Link className="dropdown-item" to="/productos/ampsT">
                     Transistores
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/instruments/ampsA">
+                  <Link className="dropdown-item" to="/productos/ampsA">
                     Amp. Acusticos
                   </Link>
                 </li>
@@ -93,17 +93,17 @@ const NavBar = () => {
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <Link className="dropdown-item" to="/instruments/multiP">
+                  <Link className="dropdown-item" to="/productos/multiP">
                     Pedales
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/instruments/multiM">
+                  <Link className="dropdown-item" to="/productos/multiM">
                     Multiefectos
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/instruments/multiR">
+                  <Link className="dropdown-item" to="/productos/multiR">
                     Racks
                   </Link>
                 </li>
@@ -121,7 +121,7 @@ const NavBar = () => {
             </li>
             <li>
               <Link to="/Cart">
-              <CartWidget />
+                <CartWidget />
               </Link>
             </li>
             <li>

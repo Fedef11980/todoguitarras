@@ -2,6 +2,7 @@ import React from "react";
 import ItemCounter from "../Counter/ItemCounter";
 import "./ItemDetails.css";
 
+
 const ItemDetail = ({ guitarra }) => {
   return (
     <>
@@ -31,6 +32,7 @@ const ItemDetail = ({ guitarra }) => {
           </div>
         </div>
       </div>
+     
     </>
   );
 };

@@ -67,6 +67,7 @@ const instruments = [
     price: 2570,
     stock: 3,
     pictureURL: "/img/lesPaulStudio.jpg",
+    categoria: "electricas",
   },
   {
     id: 7,

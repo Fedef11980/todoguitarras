@@ -34,15 +34,14 @@ export const CustomCartContext = ({ children }) => {
     return totalproductos;
   };
 
-  /*
   const removeItem = (itemId) => {
     console.log("itemId", itemId);
     const nuevosProductos = productosCarrito.filter(
-      (producto) => producto.item.id !== itemId
+      (producto) => producto.producto.id !== itemId
     );
     console.log("nuevosProductos", nuevosProductos);
     setProductosCarrito(nuevosProductos);
-  };*/
+  };
 
   return (
     <CartContext.Provider
@@ -52,6 +51,7 @@ export const CustomCartContext = ({ children }) => {
         clear,
         totalPrice,
         contadorCarritoNavBar,
+        removeItem,
       }}
     >
       {children}
