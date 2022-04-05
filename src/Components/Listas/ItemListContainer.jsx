@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 //import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, doc,getDoc } from "firebase/firestore";
 import { db } from "../../Utils/firebase";
 
 
@@ -161,7 +161,16 @@ const ItemListContainer = () => {
       setProducts(dataItem);
 
       //peticion a un unico documento
-    };
+      //creamos nuestra referencia de ese documento
+      //ItelDetailsContainer
+      const queryDoc= doc (db,'item')
+      const responseDoc= await getDoc (queryDoc)
+      const dataDoc = responseDoc.data;
+      console.log("info doc", dataDoc);
+      console.log('idDoc', responseDoc.id);
+      const newDocumento={id:respondeDoc.id, ...dataDoc}
+      console.log('newDocumento', newDocumento);  
+      };
     getData();
   }, []);
 
