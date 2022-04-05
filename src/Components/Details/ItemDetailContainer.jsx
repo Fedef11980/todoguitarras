@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { printGuitars } from "../Listas/ItemListContainer";
+import { getData } from "../Listas/ItemListContainer";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
@@ -9,10 +10,10 @@ const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
 
   const { itemId } = useParams();
-  //console.log(itemId);
+  console.log(itemId);
 
   useEffect(() => {
-    printGuitars()
+    getData()
       .then((res) => {
         setItem(res.find((prod) => prod.id === Number(itemId)));
       })

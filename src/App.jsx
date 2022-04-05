@@ -29,7 +29,6 @@ const App = () => {
           <Route path="Nosotros" element={<Nosotros />} />
           <Route path="Contacto" element={<Contacto />} />
           <Route path="*" element={<Navigate to="/" />} />
-
           <Route path="firebase" element={<FirebaseComponent />} />
         </Routes>
       </BrowserRouter>

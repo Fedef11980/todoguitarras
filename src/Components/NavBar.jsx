@@ -41,7 +41,10 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/productos/acusticas">
+                  <Link
+                    className="dropdown-item"
+                    to="/productos/electroAcusticas"
+                  >
                     Electroacusticas
                   </Link>
                 </li>

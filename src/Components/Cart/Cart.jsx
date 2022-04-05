@@ -39,7 +39,7 @@ export const Cart = () => {
         </div>
       ) : (
         <div>
-          <p>No hay productos</p>
+          <h1 className="text-center">No hay productos =(</h1>
           <Link className="btn btn-dark " to="/*">
             Ir Inicio
           </Link>

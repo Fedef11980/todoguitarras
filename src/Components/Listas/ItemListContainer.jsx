@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+//import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../Utils/firebase";
 
-const instruments = [
+
+/* const instruments = [
   {
     id: 1,
     marca: "PRS",
@@ -49,11 +52,11 @@ const instruments = [
   },
   {
     id: 5,
-    marca: "Ibanez S",
+    marca: "Ibanez",
     description:
       "La guitarra eléctrica S Series S771PB de Ibanez presenta un cuerpo de caoba ligero y esculpido con una tapa de madera de álamo en un acabado plano natural y un mástil de arce atornillado Wizard III con un diapasón de palisandro de 24 trastes encuadernados e incrustaciones de puntos blancos compensados. . El sólido cuerpo de doble cutaway brinda la máxima resonancia y sustain, mientras que el mástil Wizard III es delgado, plano y rápido, pero fuerte, y brinda una jugabilidad ilimitada para el músico más exigente.",
-    model: "771PB",
-    price: 570,
+    model: "S 771PB",
+    price: 890,
     stock: 6,
     pictureURL: "/img/ibanez521S.jpg",
     categoria: "electricas",
@@ -115,6 +118,11 @@ const instruments = [
   },
 ];
 export const printGuitars = () => {
+ 
+
+
+
+
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (instruments.length === 0) {
@@ -124,15 +132,44 @@ export const printGuitars = () => {
       }
     }, 2000);
   });
-};
+;
+ */
 
 const ItemListContainer = () => {
   const [productos, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const { categoryId } = useParams();
 
   useEffect(() => {
+    const getData = async () => {
+      //referencia en la base de datos  de la infomacion  que quiero obtener
+      const query = collection(db, "item");
+      //obtener los documentos dentro de la colección item
+      const response = await getDocs(query);
+      //obtener informacion del documento y su id
+      console.log("respuesta", response);
+      console.log("info del documento", response.doc[0]);
+      console.log("id del documento", response.doc[0].id);
+
+      //const newDoc ={
+      //  id: docs.id,
+      //  data: doc.data
+      //}
+
+      const dataItem = response.docs.map((doc) => {
+        return { id: doc.id, ...doc.data() };
+      });
+      console.log("dataItem", dataItem);
+      setProducts(dataItem);
+
+      //peticion a un unico documento
+    };
+    getData();
+  }, []);
+
+  /*  
+  const [loading, setLoading] = useState(true);
+  const { categoryId } = useParams();
+ */
+  /* useEffect(() => {
     printGuitars()
       .then((res) => {
         if (!categoryId) {
@@ -145,12 +182,12 @@ const ItemListContainer = () => {
         console.log("Consulto Stock" + err);
       })
       .finally(() => setLoading(false));
-  }, [categoryId]);
+  }, [categoryId]); */
 
   return (
     <div>
-      <h1 className="text-center py2">Todo Guitarra</h1>
-      {loading ? <p>...Cargando...</p> : <ItemList card={productos} />}
+      <h1 className="text-center py2">Todo Guitarra</h1>   
+      {<ItemList card={productos} />}
     </div>
   );
 };
