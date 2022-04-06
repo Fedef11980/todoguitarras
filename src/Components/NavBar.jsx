@@ -65,7 +65,7 @@ const NavBar = () => {
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <Link className="dropdown-item" to="/productos/ampsV">
+                  <Link className="dropdown-item" to="/productos/valvAmps">
                     Valvulares
                   </Link>
                 </li>
