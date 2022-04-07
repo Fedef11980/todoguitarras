@@ -11,10 +11,11 @@ export const Cart = () => {
 
   return (
     <div className="container">
-      {productosCarrito.length > 0 ? (
-        <div>
-          {productosCarrito.map((item) => (
-            <CartItem
+      <div className="col-8">
+          {productosCarrito.length > 0 ? (
+          <div>
+            {productosCarrito.map((item) => (
+              <CartItem
               key={item?.producto.id}
               imagen={item?.producto.pictureURL}
               nombre={item?.producto.marca}
@@ -22,11 +23,9 @@ export const Cart = () => {
               precio={item?.producto.price}
               id={item?.producto.id}
               productoProp={item}
-            />
-          ))}
-          <div>
-            <p>Total:$ {carritoContext.totalPrice()} </p>
-          </div>
+              />
+            ))}
+         
           <div>
             <button
               type="button"
@@ -42,9 +41,23 @@ export const Cart = () => {
           <h1 className="text-center">No hay productos =(</h1>
           <Link className="btn btn-dark " to="/*">
             Ir Inicio
-          </Link>
+          </Link>))}
         </div>
-      )}
+     
+    </div>
+      <div>
+        <form col-4>
+        <div>
+            <p>Total:$ {carritoContext.totalPrice()} </p>
+          </div>
+          <input type="text" placeholder="Nombre" /> 
+          <br/>
+          <input type="text" placeholder="phone" />
+          <br />
+          <input type="mail" placeholder="mail" />
+          <button>Enviar orden</button>
+        </form>
+      </div>
     </div>
   );
 };
