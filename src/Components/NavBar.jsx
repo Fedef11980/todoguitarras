@@ -10,7 +10,7 @@ const NavBar = () => {
           <ul className="navbar-nav">
             <li>
               <Link className="text-white" to="/">
-                <h2>Todo Guitarra</h2>
+                <button className="btn text-white"> Todo Guitarra</button>
               </Link>
             </li>
             <li className="nav-item dropdown ">
@@ -114,12 +114,12 @@ const NavBar = () => {
             </li>
             <li>
               <Link to="/Nosotros" className="text-white">
-                <h4>Nosotros</h4>
+                <button className="btn text-white">Nosotros </button>
               </Link>
             </li>
             <li>
               <Link to="/Contacto" className="text-white">
-                <h4>Contacto</h4>
+                <button className="btn text-white"> Contacto</button>
               </Link>
             </li>
             <li>
@@ -128,7 +128,9 @@ const NavBar = () => {
               </Link>
             </li>
             <li>
-              <Link to="firebase">Firebase</Link>
+              <Link to="firebase">
+                <button className="btn">Firebase</button>
+              </Link>
             </li>
           </ul>
         </div>

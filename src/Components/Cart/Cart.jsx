@@ -2,7 +2,14 @@ import { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { CartItem } from "../CartItem/CartItem";
 import { Link } from "react-router-dom";
-import { collection, Timestamp, addDoc } from "firebase/firestore";
+import {
+  collection,
+  Timestamp,
+  addDoc,
+  doc,
+  updateDoc,
+  getDoc,
+} from "firebase/firestore";
 import { db } from "../../Utils/firebase";
 
 export const Cart = () => {
@@ -29,17 +36,25 @@ export const Cart = () => {
       date: Timestamp.fromDate(new Date()),
     };
     console.log("compra", newOrder);
+    //crear referencia de la collección
+    const ordersCollection = collection(db, "orders");
+    //crear un nuevo doc de la orden
+    const docReference = await addDoc(ordersCollection, newOrder);
+    console.log("doc creado", docReference);
   };
-  //crear referencia de la collección
-  const ordersCollection = collection(db, "orders");
-  //crear un nuevo doc de la orden
-  const docReference = await addDoc(ordersCollection, newOrder);
-  console.log("doc creado", docReference);
+
+  const actualizarProd = async () => {
+    const docReference = doc(db, "item", "zzpti5niHN7a2GZVpCES");
+    const docResponse = await getDoc(docReference);
+    const dataDoc = docResponse.data();
+    console.log("data", dataDoc);
+    await updateDoc(docReference, { ...dataDoc, stock: 15 });
+  };
 
   return (
-    <div className="container align-items-center">
+    <div className="container ">
       <div className="row">
-        <div className="col-8 ">
+        <div className="col-8 col-4 d-flex justify-content-center">
           {productosCarrito.length > 0 ? (
             <div>
               {productosCarrito.map((item) => (
@@ -56,8 +71,8 @@ export const Cart = () => {
               <div>
                 <button
                   type="button"
-                  className="btn btn-danger text-white my-3 "
-                  nClick={carritoContext.clear}
+                  className="btn btn-danger text-white my-3 col-4 d-flex justify-content-center "
+                  onClick={carritoContext.clear}
                 >
                   Vaciar Carrito
                 </button>
@@ -65,15 +80,14 @@ export const Cart = () => {
             </div>
           ) : (
             <div>
-              <h1 className="text-center">No hay productos =(</h1>
+              <h1 className="text-center">No hay productos </h1>
               <Link className="btn btn-dark " to="/*">
                 Volver a la tienda
               </Link>
-              )
             </div>
           )}
         </div>
-        <div className="col-4  ">
+        <div className="col-4 d-flex justify-content-center ">
           <form onSubmit={sendInfo}>
             <input
               type="text"
@@ -98,11 +112,18 @@ export const Cart = () => {
             </p>
             <br />
             <hr />
-            <button type="submit" className="p-2 alignitem-center">
+            <button
+              type="submit"
+              className=" btn btn-success light p-2 alignitem-center"
+            >
               Enviar orden
             </button>
           </form>
         </div>
+        <br /> <br /> <br />
+        <button className="btn" onClick={actualizarProd}>
+          Actualizar Producto
+        </button>
       </div>
     </div>
   );
