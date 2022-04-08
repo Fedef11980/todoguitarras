@@ -5,20 +5,24 @@ export const CustomCartContext = ({ children }) => {
   const [productosCarrito, setProductosCarrito] = useState([]);
 
   const addItem = (producto, quantity) => {
-    const newProduct={
+    const newProduct = {
       producto,
-      quantity
-    }
-    const productIn= productosCarrito.find(product=>product.producto.id === producto.id);
-    if (productIn){
-      console.log('entre al if');
-      const newCart = productosCarrito.filter((product)=>product.producto.id !== producto.id);
+      quantity,
+    };
+    const productIn = productosCarrito.find(
+      (product) => product.producto.id === producto.id
+    );
+    if (productIn) {
+      console.log("entre al if");
+      const newCart = productosCarrito.filter(
+        (product) => product.producto.id !== producto.id
+      );
       productIn.quantity += quantity;
-      setProductosCarrito([...newCart,productIn]);
-      } else{  
-      setProductosCarrito([...productosCarrito,newProduct]);
-      }
-  }
+      setProductosCarrito([...newCart, productIn]);
+    } else {
+      setProductosCarrito([...productosCarrito, newProduct]);
+    }
+  };
 
   const clear = () => {
     setProductosCarrito([]);
