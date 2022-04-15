@@ -33,18 +33,12 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    className="dropdown-item"
-                    to="/instruments/electroAcusticas"
-                  >
+                  <Link className="dropdown-item" to="/productos/acusticas">
                     Acusticas
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    className="dropdown-item"
-                    to="/productos/electroAcusticas"
-                  >
+                  <Link className="dropdown-item" to="/productos/electroAc">
                     Electroacusticas
                   </Link>
                 </li>
@@ -65,7 +59,7 @@ const NavBar = () => {
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <Link className="dropdown-item" to="/productos/valvAmps">
+                  <Link className="dropdown-item" to="/productos/ampsV">
                     Valvulares
                   </Link>
                 </li>
