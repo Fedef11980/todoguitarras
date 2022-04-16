@@ -90,17 +90,17 @@ const NavBar = () => {
                 aria-labelledby="navbarDropdownMenuLink"
               >
                 <li>
-                  <Link className="dropdown-item" to="/productos/multiP">
+                  <Link className="dropdown-item" to="/productos/pedal">
                     Pedales
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/productos/multiM">
+                  <Link className="dropdown-item" to="/productos/pedaleras">
                     Multiefectos
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/productos/multiR">
+                  <Link className="dropdown-item" to="/productos/Racks">
                     Racks
                   </Link>
                 </li>
