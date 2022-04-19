@@ -100,7 +100,7 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/productos/Racks">
+                  <Link className="dropdown-item" to="/productos/racks">
                     Racks
                   </Link>
                 </li>

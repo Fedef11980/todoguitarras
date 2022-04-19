@@ -2,7 +2,6 @@ import React from "react";
 import ItemCounter from "../Counter/ItemCounter";
 import "./ItemDetails.css";
 
-
 const ItemDetail = ({ guitarra }) => {
   return (
     <>
@@ -17,7 +16,7 @@ const ItemDetail = ({ guitarra }) => {
                   alt={guitarra?.pictureURL}
                 />
               </div>
-              <div className="col-md-8 py-4 ">
+              <div className="col-md-8 p-10">
                 <div className="card-body fondo">
                   <h1 className="card-title">{guitarra?.marca}</h1>
                   <h3 className="card-title">{guitarra?.model} </h3>
@@ -32,7 +31,6 @@ const ItemDetail = ({ guitarra }) => {
           </div>
         </div>
       </div>
-     
     </>
   );
 };
