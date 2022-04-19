@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { CustomCartContext } from "./Context/CustomCartContext";
 import { Cart } from "./Components/Cart/Cart";
 import { FirebaseComponent } from "./Components/FirebaseComponent";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="*" element={<Navigate to="/" />} />
           <Route path="firebase" element={<FirebaseComponent />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </CustomCartContext>
   );

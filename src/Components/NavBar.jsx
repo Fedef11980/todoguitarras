@@ -111,11 +111,7 @@ const NavBar = () => {
                 <button className="btn text-white">Nosotros </button>
               </Link>
             </li>
-            <li>
-              <Link to="/Contacto" className="text-white">
-                <button className="btn text-white"> Contacto</button>
-              </Link>
-            </li>
+          
             <li>
               <Link to="/Cart">
                 <CartWidget />
