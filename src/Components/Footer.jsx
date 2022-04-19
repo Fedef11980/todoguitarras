@@ -18,7 +18,7 @@ function Footer() {
             <li><a href="#">Sobre Nosotros</a></li>
             <li><a href="#">Sucursal</a></li>
             <li><a href="#">Politica de Privacidad</a></li>
-            <li><Link to="/Contacto" className="text-white">Contáctenos </Link></li>            
+            <li><Link to="/Contacto" className="text-white">Contáctenos</Link></li>            
           </ul>
         </div>
         <div className="col-4 pie">
