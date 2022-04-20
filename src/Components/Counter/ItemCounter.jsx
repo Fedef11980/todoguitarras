@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 
-
 const ItemCounter = ({ max, product }) => {
   const [contador, setContador] = useState(1);
 
@@ -46,13 +45,31 @@ const ItemCounter = ({ max, product }) => {
         onClick={() => agregar(contador)}
       >
         Comprar
-      </button>      {agregarIntrumentos > 0 && (
+      </button>{" "}
+      {agregarIntrumentos > 0 && (
         <div className="container">
-          <Link to="/*"> Seguir comprando </Link>
-
-          <Link to="/Cart">Finalizar compras</Link>
+          <div className="row">
+            <div className="col-6">
+              <div>
+                <button className="btn">
+                  <Link to="/*" type="button" className="btn btn-secondary">
+                    Seguir comprando
+                  </Link>
+                </button>
+              </div>
+            </div>
+            <div className="col-6">
+              <div>
+                <button className="btn ">
+                  <Link type="button" className="btn btn-light" to="/Cart">
+                    Finalizar compras
+                  </Link>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      )}      
+      )}
     </div>
   );
 };

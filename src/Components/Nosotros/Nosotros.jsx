@@ -1,42 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React from "react";
 
 const Nosotros = () => {
-
-  const [isMobile, setIsMobile] = useState(false)
-
-  console.log (window.visualViewport.width)
-
-  useEffect(()=>{
-    const checkMobile = (event) => {
-      console.log(event)
-      if (window.visualViewport.width <= 768) {
-        setIsMobile(true)
-      } else {
-        setIsMobile(false)
-      }
-    }    
-
-    checkMobile()
-
-    window.addEventListener("resize",checkMobile)
-
-    return ()=>{
-      window.removeEventListener("resize",checkMobile)
-    }
-
-  },[])
-    
   return (
-    <div>
-     <h2>Nosotros</h2> 
-     <hr />
-      {
-        isMobile
-        ? <h4>Estamos en mobile</h4>
-        : <h4>Estamos en desktop</h4>
-      }
+    <div className="container">
+      <h3 className="text-center">
+        <strong>Sobre Nosotros</strong>
+      </h3>
+      <h4>Misión</h4>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas sint
+        aliquid, molestias error ut laudantium consequuntur dolor voluptatibus
+        iusto quidem accusamus non nihil excepturi tempore explicabo odio,
+        maxime repellat blanditiis.Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Voluptas sint aliquid, molestias error ut laudantium
+        consequuntur dolor voluptatibus iusto quidem accusamus non nihil
+        excepturi tempore explicabo odio, maxime repellat blanditiis.Lorem ipsum
+        dolor, sit amet consectetur adipisicing elit. Eum cupiditate excepturi
+        velit nam odit aperiam quas commodi! Laboriosam temporibus, explicabo
+        unde ex dolor incidunt et fugiat totam doloribus architecto? Veritatis?
+      </p>
+      <br />
+      <h4>Visión</h4>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum cupiditate
+        excepturi velit nam odit aperiam quas commodi! Laboriosam temporibus,
+        explicabo unde ex dolor incidunt et fugiat totam doloribus architecto?
+        Veritatis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum
+        cupiditate excepturi velit nam odit aperiam quas commodi! Laboriosam
+        temporibus, explicabo unde ex dolor incidunt et fugiat totam doloribus
+        architecto? Veritatis?Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Voluptas sint aliquid, molestias error ut laudantium
+        consequuntur dolor voluptatibus iusto quidem accusamus non nihil
+        excepturi tempore explicabo odio, maxime repellat blanditiis
+      </p>
     </div>
-  )
-}
+  );
+};
 
-export default Nosotros
+export default Nosotros;

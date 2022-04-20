@@ -106,20 +106,10 @@ const NavBar = () => {
                 </li>
               </ul>
             </li>
-            <li>
-              <Link to="/Nosotros" className="text-white">
-                <button className="btn text-white">Nosotros </button>
-              </Link>
-            </li>
-          
+
             <li>
               <Link to="/Cart">
                 <CartWidget />
-              </Link>
-            </li>
-            <li>
-              <Link to="firebase">
-                <button className="btn">Firebase</button>
               </Link>
             </li>
           </ul>

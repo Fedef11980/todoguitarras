@@ -1,78 +1,79 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .conte {
-    max-width: 1170px;
-    margin: auto;
-  }
-  ul {
-    list-style: none;
-  }
-  .footer {
-    background-color: #24262b;
-    padding: 70px 0;
-    height: 270px;
-  }
-  .pie h4 {
-    color: #ffff;
-    font-size: 18px;
-    text-transform: capitalize;
-    margin-bottom: 35px;
-    font-weight: 500;
-    position: relative;
-  }
-  .pie ul li {
-    margin-bottom: 10px;
-  }
-  .pie ul li a {
-    font-size: 16px;
-    text-transform: capitalize;
-    color: #ffff;
-    text-decoration: none;
-    font-weight: 300;
-    color: #bbb;
-    display: block;
-  }
-  .pie ul li a:hover {
-    color: #ffff;
-    padding-left: 8px;
-  }
-  .social-links a {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-color: rgba(255, 255, 255, 0.2);
-    text-align: center;
-    line-height: 40px;
-    border-radius: 50%;
-    color: #ffff;
-    transition: all 0.5s ease;
-  }
-  .social-links a:hover {
-    color: #24262b;
-    background-color: #ffff;
-  }
-  @media (max-width: 767px) {
-    .pie {
-      width: 50%;
-      margin-bottom: 30px;
-    }
-  }
-  @media (max-width: 574px) {
-    .pie {
-      width: 100%;
-    }
-  }
-  
-  .titulo {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  #container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.conte {
+  max-width: 1170px;
+  margin: auto;
+}
+ul {
+  list-style: none;
+}
+.footer {
+  background-color: #24262b;
+  padding: 10px 0;
+  padding-top: 27px;
+  height: 250px;
+}
+.pie h4 {
+  color: #ffff;
+  font-size: 18px;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.pie ul li {
+  margin-bottom: 10px;
+}
+.pie ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbb;
+  display: block;
+}
+.pie ul li a:hover {
+  color: #ffff;
+  padding-left: 8px;
+}
+.social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffff;
+  transition: all 0.5s ease;
+}
+.social-links a:hover {
+  color: #24262b;
+  background-color: #ffff;
+}
+@media (max-width: 767px) {
+  .pie {
+    width: 50%;
     margin-bottom: 30px;
   }
-  .cargar {
-    width: auto;
+}
+@media (max-width: 574px) {
+  .pie {
+    width: 100%;
   }
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#container {
+  margin-bottom: 30px;
+}
+.cargar {
+  width: auto;
+}

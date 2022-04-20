@@ -25,7 +25,15 @@ const ItemDetailContainer = () => {
   }, []);
 
   return (
-    <div>{loading ? <h2>Cargando...</h2> : <ItemDetail guitarra={item} />}</div>
+    <div>
+      {loading ? (
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      ) : (
+        <ItemDetail guitarra={item} />
+      )}
+    </div>
   );
 };
 
