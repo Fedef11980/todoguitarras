@@ -145,12 +145,7 @@ export const Cart = () => {
               <br />
               <hr />
               <div className="d-flex justify-content-center">
-                <button
-                  type="submit"
-                  className=" btn btn-success light p-2 alignitem-center"
-                >
-                  Enviar orden
-                </button>
+                <Link to="/checkout"type="submit" className=" btn btn-success light p-2 alignitem-center">Enviar orden </Link>                
               </div>
             </form>
           </div>
