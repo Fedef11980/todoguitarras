@@ -11,12 +11,10 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     const getData = async () => {
-      //referencia en la base de datos  de la infomacion  que quiero obtener
       const query = collection(db, "item");
-      //obtener los documentos dentro de la colección item
+
       const response = await getDocs(query);
-      //obtener informacion del documento y su id
-      console.log("respuesta", response);
+
       const dataItem = response.docs.map((doc) => {
         return { id: doc.id, ...doc.data() };
       });

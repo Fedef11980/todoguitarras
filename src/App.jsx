@@ -1,17 +1,15 @@
 import "./App.css";
-
 import ItemListContainer from "./Components/Listas/ItemListContainer";
 import ItemDetailContainer from "./Components/Details/ItemDetailContainer";
-
 import NavBar from "./Components/NavBar";
 import Contacto from "./Components/Contacto/Contacto";
 import Nosotros from "./Components/Nosotros/Nosotros";
-
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { CustomCartContext } from "./Context/CustomCartContext";
 import { Cart } from "./Components/Cart/Cart";
 import { FirebaseComponent } from "./Components/FirebaseComponent";
 import Footer from "./Components/Footer";
+import { Checkout } from "./Components/Checkout/Checkout";
 
 const App = () => {
   return (
@@ -31,8 +29,9 @@ const App = () => {
           <Route path="Contacto" element={<Contacto />} />
           <Route path="*" element={<Navigate to="/" />} />
           <Route path="firebase" element={<FirebaseComponent />} />
+          <Route path="Checkout" element={<Checkout />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </CustomCartContext>
   );

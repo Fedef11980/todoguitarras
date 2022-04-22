@@ -45,7 +45,7 @@ const ItemCounter = ({ max, product }) => {
         onClick={() => agregar(contador)}
       >
         Comprar
-      </button>{" "}
+      </button>
       {agregarIntrumentos > 0 && (
         <div className="container">
           <div className="row">
