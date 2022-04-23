@@ -1,14 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { CartItem } from "../CartItem/CartItem";
 import { Link } from "react-router-dom";
 import { doc, updateDoc, getDoc } from "firebase/firestore";
 import { db } from "../../Utils/firebase";
 import { collection, Timestamp, addDoc } from "firebase/firestore";
+import ItemListContainer from "../Listas/ItemListContainer";
 
 export const Cart = () => {
   const carritoContext = useContext(CartContext);
   const productosCarrito = carritoContext.productosCarrito;
+  const clear = carritoContext.clear;
+  const [orderId, setOrderId] = useState(null);
 
   const actualizarProd = async () => {
     const docReference = doc(db, "item", "zzpti5niHN7a2GZVpCES");
@@ -19,10 +22,29 @@ export const Cart = () => {
   };
   const sendInfo = async (e) => {
     e.preventDefault();
+
     const name = e.target[0].value;
     const direccion = e.target[1].value;
     const phone = e.target[2].value;
     const email = e.target[3].value;
+
+    if (e.target[0].length < 3) {
+      alert("El nombre debe tener al menos 3 caracteres");
+      return;
+    }
+
+    if (e.target[1].length < 2) {
+      alert("La dirección debe tener al menos 2 caracteres");
+      return;
+    }
+    if (e.target[2].length < 6) {
+      alert("El teléfono debe tener al menos 6 caracteres");
+      return;
+    }
+    if (e.target[3].length < 5) {
+      alert("El mail debe tener al menos 5 caracteres");
+      return;
+    }
 
     const newOrder = {
       buyer: {
@@ -39,9 +61,38 @@ export const Cart = () => {
 
     const ordersCollection = collection(db, "orders");
 
-    const docReference = await addDoc(ordersCollection, newOrder);
+    const docReference = await addDoc(ordersCollection, newOrder).then(
+      (resp) => {
+        productosCarrito.forEach((producto) => {
+          const docReference = doc(db, "item", producto.producto.id);
+          updateDoc(docReference, {
+            stock: producto.producto.stock - producto.quantity,
+          });
+        });
+        setOrderId(resp.id);
+        clear();
+      }
+    );
     console.log("doc creado", docReference);
   };
+
+  if (orderId) {
+    return (
+      <div className="container my-5">
+        <h2>Gracias por tu compra</h2>
+        <hr />
+        <br />
+        <h3>Tú numero de orden es: {orderId}</h3>
+        <Link to="/" className="btn btn-dark">
+          Volver
+        </Link>
+      </div>
+    );
+  }
+
+  if (productosCarrito.length === 0) {
+    return <ItemListContainer to="/" />;
+  }
 
   return (
     <div className="container ">
@@ -145,7 +196,19 @@ export const Cart = () => {
               <br />
               <hr />
               <div className="d-flex justify-content-center">
-                <Link to="/checkout"type="submit" className=" btn btn-success light p-2 alignitem-center">Enviar orden </Link>                
+                <button
+                  type="submit"
+                  className=" btn btn-success light p-2 alignitem-center"
+                >
+                  Enviar orden
+                </button>
+                {/* <Link
+                  to="/checkout"
+                  type="submit"
+                  className=" btn btn-success light p-2 alignitem-center"
+                >
+                  Enviar orden
+                </Link> */}
               </div>
             </form>
           </div>
@@ -156,6 +219,5 @@ export const Cart = () => {
         </button>
       </div>
     </div>
-    
   );
 };
