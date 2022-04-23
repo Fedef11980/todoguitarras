@@ -49,7 +49,7 @@ export const CustomCartContext = ({ children }) => {
     const nuevosProductos = productosCarrito.filter(
       (producto) => producto.producto.id !== itemId
     );
-    console.log("nuevosProductos", nuevosProductos);
+
     setProductosCarrito(nuevosProductos);
   };
 

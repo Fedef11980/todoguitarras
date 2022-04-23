@@ -6,10 +6,13 @@ import { db } from "../../Utils/firebase";
 
 const ItemListContainer = () => {
   const [productos, setProducts] = useState([]);
-  //const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+
   const { categoryId } = useParams();
 
   useEffect(() => {
+    setLoading(true);
+
     const getData = async () => {
       const query = collection(db, "item");
 
@@ -18,7 +21,8 @@ const ItemListContainer = () => {
       const dataItem = response.docs.map((doc) => {
         return { id: doc.id, ...doc.data() };
       });
-      console.log("dataItem", dataItem);
+      setLoading(false);
+
       const printIntruments = () => {
         if (!categoryId) {
           setProducts(dataItem);
@@ -32,9 +36,14 @@ const ItemListContainer = () => {
   }, [categoryId]);
 
   return (
-    <div>
-      <h1 className="text-center py2">Todo Guitarra</h1>
-      {<ItemList card={productos} />}
+    <div className="d-flex justify-content-center">
+      {loading ? (
+        <div className="spinner-border  m-5" role="status">
+          <span className="visually-hidden ">Loading...</span>
+        </div>
+      ) : (
+        <ItemList card={productos} />
+      )}
     </div>
   );
 };

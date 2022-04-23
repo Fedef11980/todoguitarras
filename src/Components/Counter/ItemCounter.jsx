@@ -15,7 +15,6 @@ const ItemCounter = ({ max, product }) => {
   };
 
   const [agregarIntrumentos, setAgregarInstrumentos] = useState(0);
-  console.log("ItemCounter-agregarinstrumentos", agregarIntrumentos);
 
   const [stockInstrumentos, setStockIntrumentos] = useState(max);
   console.log("stock", stockInstrumentos);
@@ -27,7 +26,6 @@ const ItemCounter = ({ max, product }) => {
   };
 
   const carritoContext = useContext(CartContext);
-  console.log(carritoContext);
 
   return (
     <div className="p-1 text-center">

@@ -111,10 +111,10 @@ export const Cart = () => {
                   productoProp={item}
                 />
               ))}
-              <div>
+              <div className="d-flex justify-content-center">
                 <button
                   type="button"
-                  className="btn btn-danger text-white my-3 d-flex justify-content-center "
+                  className="btn btn-danger text-white my-3  "
                   onClick={carritoContext.clear}
                 >
                   Vaciar Carrito
@@ -137,8 +137,11 @@ export const Cart = () => {
         <div className="col-5">
           <div className=" d-flex justify-content-center">
             <form onSubmit={sendInfo}>
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">
+              <div className="input-group mb-3">
+                <span
+                  className="input-group-text"
+                  id="inputGroup-sizing-default"
+                >
                   Nombre
                 </span>
                 <input
@@ -202,21 +205,19 @@ export const Cart = () => {
                 >
                   Enviar orden
                 </button>
-                {/* <Link
-                  to="/checkout"
-                  type="submit"
-                  className=" btn btn-success light p-2 alignitem-center"
-                >
-                  Enviar orden
-                </Link> */}
               </div>
             </form>
           </div>
         </div>
-        <br /> <br /> <br />
-        <button className="btn" onClick={actualizarProd}>
-          Actualizar Producto
-        </button>
+        <br />
+        <br />
+        <br />
+        <div className="m-2">
+          <button className="btn btn-light" onClick={actualizarProd}>
+            Actualizar Producto
+          </button>
+        </div>
+        <br />
       </div>
     </div>
   );
