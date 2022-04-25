@@ -6,6 +6,7 @@ import { doc, updateDoc, getDoc } from "firebase/firestore";
 import { db } from "../../Utils/firebase";
 import { collection, Timestamp, addDoc } from "firebase/firestore";
 import ItemListContainer from "../Listas/ItemListContainer";
+import swal from "sweetalert";
 
 export const Cart = () => {
   const carritoContext = useContext(CartContext);
@@ -27,22 +28,23 @@ export const Cart = () => {
     const direccion = e.target[1].value;
     const phone = e.target[2].value;
     const email = e.target[3].value;
+    console.log("nombre", name);
 
-    if (e.target[0].length < 3) {
-      alert("El nombre debe tener al menos 3 caracteres");
+    if (name.length <= 3) {
+      swal("El Nombre debe tener al menos 3 letras");
       return;
     }
 
-    if (e.target[1].length < 2) {
-      alert("La dirección debe tener al menos 2 caracteres");
+    if (direccion.length <= 4) {
+      swal("La dirección debe tener al menos 4 caracteres");
       return;
     }
-    if (e.target[2].length < 6) {
-      alert("El teléfono debe tener al menos 6 caracteres");
+    if (phone.length < 6) {
+      swal("El teléfono debe tener al menos 6 caracteres");
       return;
     }
-    if (e.target[3].length < 5) {
-      alert("El mail debe tener al menos 5 caracteres");
+    if (email.length < 5) {
+      swal("El mail debe tener al menos 5 caracteres");
       return;
     }
 
