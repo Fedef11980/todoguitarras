@@ -10,6 +10,8 @@ export const Checkout = () => {
       <Link to="/" className="btn btn-dark">
         Volver
       </Link>
+      <br />
+      <h5>Gracias por tu compra!!</h5>
     </div>
   );
 };
