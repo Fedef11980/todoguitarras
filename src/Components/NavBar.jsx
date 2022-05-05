@@ -7,10 +7,15 @@ const NavBar = () => {
     <div className="row">
       <nav className="navbar navbar-expand-md justify-content-around navbar-light text-white bg-dark">
         <div className="d-flex justify-content-around p-3">
+          <div  className="d-flex justify-content-start">
+            <Link className="text-white" to="/">
+                <h3 className=" btn text-white">Todo Guitarras </h3>
+            </Link>          
+          </div>          
           <ul className="navbar-nav">
             <li>
               <Link className="text-white" to="/">
-                <button className="btn text-white"> Todo Guitarra</button>
+                <button className="btn text-white">Inicio</button>
               </Link>
             </li>
             <li className="nav-item dropdown ">
