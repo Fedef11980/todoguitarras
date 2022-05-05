@@ -5,7 +5,7 @@ import { CartWidget } from "./CartWidget/CartWidget";
 const NavBar = () => {
   return (
     <div className="row">
-      <nav className="navbar navbar-expand-lg justify-content-around navbar-light text-white bg-dark">
+      <nav className="navbar navbar-expand-md justify-content-around navbar-light text-white bg-dark">
         <div className="d-flex justify-content-around p-3">
           <ul className="navbar-nav">
             <li>
